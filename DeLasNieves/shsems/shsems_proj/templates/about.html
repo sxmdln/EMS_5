@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block title %} {{ event.name }} {% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+body{
+    
+    background-image: url("https://img.freepik.com/free-vector/blue-abstract-acrylic-brush-stroke-textured-background_53876-86373.jpg?size=626&ext=jpg")
+}
+
+</style>
+</head>
+<body>
+   <h1>Event Management System</h1>
+    
+   
+<h2> "Meet The Team"</h2>
+
+<br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSryt2zIsuLWBGnlbljN25G4eorGzIPJuDxN8EcJkqEUPbRYkZV&s" alt="Samantha" style="width:50%">
+      <div class="container">
+        <h2>Samantha De Las Nieves</h2>
+        <p class="title">Programmer</p>
+        <p></p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Jay Ar" style="width:50%">
+      <div class="container">
+        <h2>Jay Ar San Joaquin</h2>
+        <p class="title">UI/UX Designer</p>
+        <p></p>
+        <p>jayarsanjoaquin20@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZxrQ1WYa2bUNqSiCiYYjOkoJh0aT9fLCJvAn7029weCqzHF5x&s" alt="Lynching" style="width:50%">
+      <div class="container">
+        <h2>Lynching Flores</h2>
+        <p class="title">Project Manager</p>
+        <p></p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="https://www.pingyuepanlab.com/wp-content/uploads/2018/09/avtar.png" alt="Samantha" style="width:50%">
+            <div class="container">
+              <h2>Angelica DeLos Santos</h2>
+              <p class="title">Software Engineer</p>
+              <p></p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="http://pieceofadvice.org/assets/avatars/default.png" alt="Jay Ar" style="width:50%">
+            <div class="container">
+              <h2> Michael Andrei Bernante</h2>
+              <p class="title">System Analyst</p>
+              <p></p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQypThjdDNOtdEBZ19fLLVAbbUX3rVEIO-SU8AImODJw6mM0DhH&s" alt="Lynching" style="width:50%">
+            <div class="container">
+              <h2>Neil Francis Oliva</h2>
+              <p class="title">Database Manager </p>
+              <p></p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      
+
+</body>
+</html>
+{% endblock %}

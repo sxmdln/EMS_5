@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} My Events {% endblock %}
+{% block content %}
+
+<h1 class="text-center p-4">Events Created </h1>
+<style>
+    h1 {
+        color: white;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+</style>
+
+<a class="btn btn-block btn-primary" style="width: 2in;margin-left: 1cm;margin-top: 1cm;"
+    href="{% url 'event_create'%}">Add New Event</a>
+
+
+<div class="card-columns">
+    {% for event in object_list %}
+    <div class="card bg-dark"
+        style="color:seashell; margin: 15px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+        <h3 class="card-header">{{ event.name }}</h3>
+        <div class="card-body">
+
+            <p class="card-text">{{ event.description }}</p>
+            <p class="card-text">Starts on {{ event.date_from }}
+                and ends on {{ event.date_to }}</p>
+            <a href="{% url 'update' event.pk %}" class="btn btn-success btn-block">Update</a>
+            <a href="{% url 'delete' event.pk %}" class="btn btn-danger btn-block">Delete</a>
+        </div>
+        <div class="card-text " style="margin-left: 360px;">
+            <small class="">Created by {{ event.creator }}</small>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'event_detail' event.pk %}"> >> </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

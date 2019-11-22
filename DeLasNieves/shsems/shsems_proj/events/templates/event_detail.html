@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} {{ event.name }} {% endblock %}
+{% block content %}
+
+<style>
+    .container {
+        padding: 100px;
+        margin-top: 120px;
+        width: 800px;
+        color:cornsilk;
+    }
+</style>
+<body>
+<div class="container card p-3 bg-dark">
+    <div class="card-body">
+        <div class="card-title">
+            {{ event.name }}
+        </div>
+        <p>{{ event.description }}</p>
+        <div class="card-text">
+            Starts on {{ event.date_from }} {{ event.time_from }}
+            and ends on {{ event.date_to }} {{ event.time_to }}
+        </div>
+        <div class="card-text">Max slots: {{ event.max_slots }}</div>
+        <div class="card-text">
+            <small>Created by {{ event.creator }}</small>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-warning" href="{% url 'events_list' %}"> back </a>
+            <a href="{% url 'registration_create' event.pk %}" class="btn btn-success" style="margin-left: 550px;">Join</a>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

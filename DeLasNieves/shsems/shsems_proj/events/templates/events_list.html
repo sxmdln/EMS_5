@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} All Events {% endblock %}
+{% block content %}
+<div class="card-columns">
+    {% for event in object_list %}
+    <div class="card bg-dark"
+        style="color:seashell; margin: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+        <h3 class="card-header">{{ event.name }}</h3>
+
+        {% if event.poster %}
+        <img class="card-img-top" width="200px" height="190px" src="/media/{{ event.poster }}" />
+        {% endif %}
+
+        <div class="card-body">
+            <p class="card-text">
+                Starts on {{ event.date_from }}
+                and ends on {{ event.date_to }}
+                <br />
+                No. of participants: {{ event.all_participants | length }}
+            </p>
+        </div>
+        <div class="card-text" style="margin-left: 320px;">
+            <small>Created by {{ event.creator }}</small>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-info" href="{% url 'event_detail' event.pk %}" style="color:rgb(245, 247, 255)"> Details
+            </a>
+            {% if user.username not in event.all_participants %}
+            <a class="btn btn-success" href="{% url 'registration_create' event.pk %}"
+                style="margin-left: 270px;">Join</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
